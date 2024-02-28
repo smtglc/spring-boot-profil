@@ -80,7 +80,8 @@ public class WebSecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth ->
                         auth.requestMatchers("/api/auth/**").permitAll()
-                                .requestMatchers("/api/test/**").permitAll()
+
+                                .requestMatchers("/api/test/**","/api-docs/**","/api-docs/**","/swagger-ui-custom.html/**","/swagger-ui/**","/swagger-ui/index.html/**","/youtube/**").permitAll()
                                 .anyRequest().authenticated()
                 );
 
